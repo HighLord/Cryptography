@@ -11,6 +11,10 @@ Note: i gave my white hat hacker friend an encripted string and asked him to dec
 
 ### Contribution Instructions
 
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
 - Fork this repository
 - Clone your forked repository
 - Add your scripts
@@ -26,3 +30,13 @@ Note: i gave my white hat hacker friend an encripted string and asked him to dec
 - Be aware that you might need to change some values to fit your own project
 - Henceforth, any changes you need to make will be termed *"AC_RANDOMNAME_RANDOMNUMBER"*
     - "AC" means "Apply Change"
+
+### Excerpt
+
+- This Crytograph doesn't use sessions to verify user login therefore it makes web page loading and requests significantly faster
+- This cryptograph can be used not just for encrypting user login but also for encrypting user data
+
+### Support
+- - - -
+contact me at <1stempirelord@gmail.com>
+### License
