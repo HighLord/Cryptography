@@ -24,4 +24,5 @@ Note: i gave my white hat hacker friend an encripted string and asked him to dec
 
 - You can import the code into your config folder
 - Be aware that you might need to change some values to fit your own project
-- Henceforth, any changes you need to make will be termed >>"APPLY_CHANGE_RANDOMNAME_RANDOMNUMBER"
+- Henceforth, any changes you need to make will be termed *"AC_RANDOMNAME_RANDOMNUMBER"*
+    - "AC" means "Apply Change"
