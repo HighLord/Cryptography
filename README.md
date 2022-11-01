@@ -40,3 +40,5 @@ Please make sure to update tests as appropriate.
 - - - -
 contact me at <1stempirelord@gmail.com>
 ### License
+
+[HighLord](https://github.com/HighLord/Cryptography/LICENSE.txt)
