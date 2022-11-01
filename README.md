@@ -1,6 +1,6 @@
 ## Cryptography, Encryption and Decryption
 
-Cryptography is a php library for encrypting and decrypting data
+Cryptography is a php library for encrypting and decrypting login authentication data
 ### Description
 
 In my quest for a method for creating a login and register page, i came across the almighty question of how to secure said pages and requests to and from the server. I thought of how to authenticate the user and how to authorize said user. My thoughts led me to the creation of this particular type of encryption and decryption.
