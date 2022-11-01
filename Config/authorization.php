@@ -36,6 +36,7 @@ if (isset($_POST['username']) and isset($_POST['password']))
     /** Comment 3
      *  First we get the time the authorization request was made
      *  So we can check what time that particular authorization should expire
+     *  Then we can add whatever time we want the token to be valid for to it. default is 3600 seconds.
      */
     date_default_timezone_set("Africa/Lagos");
     $date_issued = strtotime(date("Y-m-d H:i:s"));
