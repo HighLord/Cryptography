@@ -39,7 +39,7 @@ Please make sure to update tests as appropriate.
 
 ### Support
 - - - -
-contact me at <1stempirelord@gmail.com>
+contact me at <Lawrencechinakaa@gmail.com>
 ### License
 
 [HighLord](https://github.com/HighLord/Cryptography/blob/main/LICENSE.txt)
