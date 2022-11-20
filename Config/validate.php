@@ -34,12 +34,12 @@ $data = $token->data;
 
 function decrypt($base)
 {
-    $ciphering = "AES-128-CTR";
+    $ciphering = "AES-256-CTR";
     $iv_length = openssl_cipher_iv_length($ciphering);
-    $options = 0;
+    $options = 2;
     $public_key = 'AC_CHOOSEYOUROWNKEY-THELONGERTHEBETTER_1'; //must be the same key as in the authorization file
     $private_key = md5($public_key);
-    $decryption = openssl_decrypt($base, $ciphering, $private_key, $options, $public_key);
+    $decryption = openssl_decrypt($base, $ciphering, $private_key, $options, $iv_length, $public_key);
     return $decryption;
 }
 $dynamic_key = decrypt($hash_key);
@@ -49,12 +49,12 @@ $dynamic_key = decrypt($hash_key);
  */
 function data($hash, $string)
 {
-    $ciphering = "AES-128-CTR";
+    $ciphering = "AES-256-CTR";
     $iv_length = openssl_cipher_iv_length($ciphering);
-    $options = 0;
+    $options = 2;
     $public_key = $hash;
     $private_key = md5($hash);
-    $encryption = openssl_decrypt($string, $ciphering, $private_key, $options, $public_key);
+    $encryption = openssl_decrypt($string, $ciphering, $private_key, $options, $iv_length, $public_key);
     return $encryption;   
 }
 
@@ -63,6 +63,7 @@ $data = json_decode($data);
 $user_name = $data->user_name;
 $user_pass = $data->user_pass;
 $validity = $data->validity;
+$md5 = $data->md5;
 $randomizer = $data->randomizer;
 $current_date = strtotime(date("Y-m-d H:i:s"));
 $dynamic_key_md5 = md5($dynamic_key);
@@ -120,7 +121,7 @@ if (mysqli_num_rows($result) === 1)
     $user_public_api = $row['user_public_api'];
     $user_secret_key = $row['user_secret_key'];
     $id = $row['ID'];
-    if ($token_access !== $validity)
+    if ($token_access !== $validity || $md5 !== md5($user_name.$user_pass.$validity))
     {
     $response = array
     (
