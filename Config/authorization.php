@@ -77,12 +77,12 @@ if (isset($_POST['username']) and isset($_POST['password']))
     }
     function salt($string)
     {
-        $ciphering = "AES-128-CTR";
+        $ciphering = "AES-256-CTR";
         $iv_length = openssl_cipher_iv_length($ciphering);
-        $options = 0;
+        $options = 2;
         $public_key = 'AC_CHOOSEYOUROWNKEY-THELONGERTHEBETTER_1';
         $private_key = md5($public_key);
-        $encryption = openssl_encrypt($string, $ciphering, $private_key, $options, $public_key);
+        $encryption = openssl_encrypt($string, $ciphering, $private_key, $options, $iv_length, $public_key);
         return $encryption;   
     }
 
@@ -101,18 +101,19 @@ if (isset($_POST['username']) and isset($_POST['password']))
     {
         $data1 = array
         (
+            "md5"=>md5($user_name.$user_pass.$expire),
             "user_name"=>"$user_name",
             "user_pass"=>"$user_pass",
             "validity"=>"$expire",
             "randomizer"=>"$randomizer"
         );
          $data = json_encode($data1);
-         $ciphering = "AES-128-CTR";
+         $ciphering = "AES-256-CTR";
          $iv_length = openssl_cipher_iv_length($ciphering);
-         $options = 0;
+         $options = 2;
          $public_key = $random_string;
          $private_key = md5($random_string);
-         $encryption = openssl_encrypt($data, $ciphering, $private_key, $options, $public_key);
+         $encryption = openssl_encrypt($data, $ciphering, $private_key, $options, $iv_length, $public_key);
         
         $data = array
         (
