@@ -3,7 +3,7 @@
 Cryptography is a php library for encrypting and decrypting login authentication data
 ### Description
 
-In my quest for a method for creating a login and register page, i came across the almighty question of how to secure said pages and requests to and from the server. I thought of how to authenticate the user and how to authorize said user. My thoughts led me to the creation of this particular type of encryption and decryption.
+In my quest for a method for creating a login and register page, i came across the almighty question of how to secure said pages and requests to and from the server. I thought of how to authenticate the user and how to authorize said user. My thoughts led me to the creation of this particular type of encryption and decryption. This encryption follows the openssl method and uses a AES256CTR encryption.
 It uses a private key and encrypts any and all data.
 I must confess, creating this was really fun.
 
